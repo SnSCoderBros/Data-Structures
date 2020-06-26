@@ -77,12 +77,52 @@ class SinglyLinkedList:
         cur.next = new_node
         new_node.next = nxt
 
+    def delete(self, data):
+        # handle if the list is empty
+        if not self.head:
+            print('List is empty.')
+            return
+
+        prev = None
+        cur = self.head
+
+        while cur:
+
+            # handles for if the current node is a node to delete
+            if cur.data == data:
+                # handles if it is the head node
+                if cur == self.head:
+                    self.head = self.head.next
+                    cur = self.head  # B
+
+                else:
+                    # handles if it is a node in the middle
+                    nxt = cur.next
+                    prev.next = nxt
+                    del cur
+                    cur = nxt
+
+            # node is not a node to delete
+            else:
+                prev = cur
+                cur = cur.next
+
+    # how to find the length of a sll
+    def __len__(self):
+        count = 0
+        cur = self.head
+        # A > B > C > D > None
+
+        while cur:
+            count += 1
+            cur = cur.next
+
+        return count
+
 
 sll = SinglyLinkedList()
 sll.append('A')
 sll.append('B')
 sll.append('C')
 sll.append('D')
-sll.append('E')
-sll.insert(sll.head.next, 'new')
 sll.print_list()
