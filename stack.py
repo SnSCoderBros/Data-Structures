@@ -71,22 +71,6 @@ Here we test if the stack works
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 """
 Here we implement the Queue with 2 stacks
 
@@ -157,9 +141,6 @@ print(queue.pop())
 print(queue)
 
 """
-
-
-
 
 
 
