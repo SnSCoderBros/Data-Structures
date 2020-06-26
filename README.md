@@ -10,6 +10,9 @@ Learn data structures in python
 - get_stack()
 - get_length()
 - peek()
+- Use Cases
+  - Balancing Parantheses/Brackets
+  - Queue With Two Stacks
 
 # Singly Linked Lists
 
@@ -19,7 +22,6 @@ Learn data structures in python
 - insert()
 - **len**()
 - delete()
-
 - Use Cases
 
   - Merge Two Singly Linked Lists
