@@ -1,15 +1,19 @@
 # Data-Structures
 Learn data structures in python
 
-- Stack
+# Stack
   - push()
   - pop()
   - is_empty()
   - get_stack()
   - get_length()
   - peek()
+  
+- Use Cases
+  - Balancing Parantheses/Brackets
+  - Queue
 
-- Singly Linked Lists
+# Singly Linked Lists
   - print_list()
   - append()
   - prepend()
@@ -17,4 +21,7 @@ Learn data structures in python
   - __len__()
   - delete()
 
-- Doubly Linked Lists
+- Use Cases
+  - Merge Two Lists
+  
+# Doubly Linked Lists
