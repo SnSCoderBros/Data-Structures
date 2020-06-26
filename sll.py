@@ -119,10 +119,59 @@ class SinglyLinkedList:
 
         return count
 
+    def merge(self, sll2):
+        # each list is already in numerical order
+
+        if not self.head:
+            return sll2.head
+
+        if not sll2.head:
+            return self.head
+
+        l1 = self.head
+        l2 = sll2.head
+        new_list = None
+
+        if l1.data <= l2.data:
+            new_list = l1
+            l1 = l1.next
+
+        elif l2.data < l1.data:
+            new_list = l2
+            l2 = l2.next
+
+        while l1 and l2:
+            if l1.data <= l2.data:
+                new_list.next = l1
+                l1 = l1.next
+                new_list = new_list.next
+
+            elif l2.data < l1.data:
+                new_list.next = l2
+                l2 = l2.next
+                new_list = new_list.next
+
+        if not l2:
+            new_list.next = l1
+
+        if not l1:
+            new_list.next = l2
+
+        return new_list
+
 
 sll = SinglyLinkedList()
-sll.append('A')
-sll.append('B')
-sll.append('C')
-sll.append('D')
+sll.append(1)
+sll.append(3)
+sll.append(5)
+sll.append(7)
+sll.append(9)
+
+sll2 = SinglyLinkedList()
+sll2.append(2)
+sll2.append(4)
+sll2.append(6)
+sll2.append(8)
+
+sll.merge(sll2)
 sll.print_list()
