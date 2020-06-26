@@ -69,8 +69,6 @@ Use a stack to check whether or not a string is balanced.
 ()), ()(]), ({) <-- Unbalanced
 '''
 
-# commit this to git
-
 
 def balance_paranthesis(parens):
     if len(parens) <= 1:
