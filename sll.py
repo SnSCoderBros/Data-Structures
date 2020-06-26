@@ -120,8 +120,6 @@ class SinglyLinkedList:
         return count
 
     def merge(self, sll2):
-        # each list is already in numerical order
-
         if not self.head:
             return sll2.head
 
@@ -164,14 +162,10 @@ sll = SinglyLinkedList()
 sll.append(1)
 sll.append(3)
 sll.append(5)
-sll.append(7)
-sll.append(9)
 
 sll2 = SinglyLinkedList()
 sll2.append(2)
 sll2.append(4)
-sll2.append(6)
-sll2.append(8)
 
 sll.merge(sll2)
 sll.print_list()
