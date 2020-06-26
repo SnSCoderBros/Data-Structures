@@ -48,6 +48,8 @@ class Stack:
     def __str__(self):
         return str(self.stack)
 
+
+
 """
 Here we test if the stack works
 
@@ -66,6 +68,23 @@ Here we test if the stack works
 
 
 """
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 """
@@ -89,7 +108,7 @@ push()
 pop()
 length()
 
-"""
+
 
 class Queue:
 
@@ -137,12 +156,19 @@ print(queue)
 print(queue.pop())
 print(queue)
 
+"""
+
+
+
+
+
+
+
 '''
 Use a stack to check whether or not a string is balanced.
 
 (), ([{}]) <-- Balanced
 ()), ()(]), ({) <-- Unbalanced
-'''
 
 
 # def balance_paranthesis(parens):
