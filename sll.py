@@ -77,8 +77,6 @@ class SinglyLinkedList:
         cur.next = new_node
         new_node.next = nxt
 
-
-<< << << < HEAD
    def reverse(self):
         """
         None 1 (head) -> 2 -> 3 -> 4 -> None
