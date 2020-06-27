@@ -184,17 +184,6 @@ sll.reverse()
 
         return new_list
 
-    def reverse(self):
-        prev = None
-        cur = self.head
-
-        while cur:
-            next_node = cur.next
-            cur.next = prev
-            prev = cur
-            cur = next_node
-        self.head = prev
-
 
 sll = SinglyLinkedList()
 sll.append(1)
