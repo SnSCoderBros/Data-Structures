@@ -77,7 +77,23 @@ class SinglyLinkedList:
         cur.next = new_node
         new_node.next = nxt
 
-    def delete(self, data):
+
+<< << << < HEAD
+   def reverse(self):
+        """
+        None 1 (head) -> 2 -> 3 -> 4 -> None
+        None <- 1 <- 2 <- 3 <- 4 (head)
+        """
+        prev = None
+        cur = self.head
+        while cur:
+            next_node = cur.next
+            cur.next = prev
+            prev = cur
+            cur = next_node
+        self.head = prev
+
+   def delete(self, data):
         # handle if the list is empty
         if not self.head:
             print('List is empty.')
@@ -157,7 +173,7 @@ class SinglyLinkedList:
 
         return new_list
 
-
+"""
 sll = SinglyLinkedList()
 sll.append(1)
 sll.append(3)
@@ -169,3 +185,17 @@ sll2.append(4)
 
 sll.merge(sll2)
 sll.print_list()
+"""
+
+
+"""
+sll = SinglyLinkedList()
+sll.append('A')
+sll.append('B')
+sll.append('C')
+sll.append('D')
+sll.append('E')
+sll.print_list()
+print("\n")
+sll.reverse()
+"""
