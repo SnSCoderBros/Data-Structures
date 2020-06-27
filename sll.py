@@ -77,6 +77,7 @@ class SinglyLinkedList:
         cur.next = new_node
         new_node.next = nxt
 
+<<<<<<< HEAD
     def reverse(self):
         """
         None 1 (head) -> 2 -> 3 -> 4 -> None
@@ -101,4 +102,97 @@ sll.append('E')
 sll.print_list()
 print("\n")
 sll.reverse()
+=======
+    def delete(self, data):
+        # handle if the list is empty
+        if not self.head:
+            print('List is empty.')
+            return
+
+        prev = None
+        cur = self.head
+
+        while cur:
+
+            # handles for if the current node is a node to delete
+            if cur.data == data:
+                # handles if it is the head node
+                if cur == self.head:
+                    self.head = self.head.next
+                    cur = self.head  # B
+
+                else:
+                    # handles if it is a node in the middle
+                    nxt = cur.next
+                    prev.next = nxt
+                    del cur
+                    cur = nxt
+
+            # node is not a node to delete
+            else:
+                prev = cur
+                cur = cur.next
+
+    # how to find the length of a sll
+    def __len__(self):
+        count = 0
+        cur = self.head
+        # A > B > C > D > None
+
+        while cur:
+            count += 1
+            cur = cur.next
+
+        return count
+
+    def merge(self, sll2):
+        if not self.head:
+            return sll2.head
+
+        if not sll2.head:
+            return self.head
+
+        l1 = self.head
+        l2 = sll2.head
+        new_list = None
+
+        if l1.data <= l2.data:
+            new_list = l1
+            l1 = l1.next
+
+        elif l2.data < l1.data:
+            new_list = l2
+            l2 = l2.next
+
+        while l1 and l2:
+            if l1.data <= l2.data:
+                new_list.next = l1
+                l1 = l1.next
+                new_list = new_list.next
+
+            elif l2.data < l1.data:
+                new_list.next = l2
+                l2 = l2.next
+                new_list = new_list.next
+
+        if not l2:
+            new_list.next = l1
+
+        if not l1:
+            new_list.next = l2
+
+        return new_list
+
+
+sll = SinglyLinkedList()
+sll.append(1)
+sll.append(3)
+sll.append(5)
+
+sll2 = SinglyLinkedList()
+sll2.append(2)
+sll2.append(4)
+
+sll.merge(sll2)
+>>>>>>> 611472ca5809bd13cfc6753ce6aa307a21df9e2a
 sll.print_list()

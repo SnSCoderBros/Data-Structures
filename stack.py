@@ -6,10 +6,10 @@ stack: []
 append data: 1,2,3,4
 [1,2,3,4]
 
-pop data
+pop
 [1,2,3]
 
-functions
+functions:
 
 push()
 pop()
@@ -49,7 +49,6 @@ class Stack:
         return str(self.stack)
 
 
-
 """
 Here we test if the stack works
 
@@ -68,7 +67,6 @@ Here we test if the stack works
 
 
 """
-
 
 
 """
@@ -102,7 +100,7 @@ class Queue:
 
     def push(self,data):
         self.orig.push(data)
-    
+
     def length(self):
         return self.orig.get_length()
 
