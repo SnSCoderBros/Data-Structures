@@ -58,7 +58,23 @@ class CircularLinkedList:
         last.next = self.head
 
     def delete(self, data):
-        pass
+
+        if self.head.data == data:
+            cur = self.head
+            last = self.head
+            while last.next != self.head:
+                last = last.next
+            last.next = cur.next
+            self.head = last.next
+            return
+        prev = None
+        cur = self.head
+        while cur.next != self.head and cur.data != data:
+            prev = cur
+            cur = cur.next
+        if cur.data == data:
+            prev.next = cur.next
+            cur = None
 
 
 cll = CircularLinkedList()
@@ -67,5 +83,7 @@ cll.append('B')
 cll.append('C')
 cll.append('D')
 cll.prepend("A")
+
+cll.delete("B")
 
 cll.print_list()
