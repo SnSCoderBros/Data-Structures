@@ -26,13 +26,17 @@ Learn data structures in python
 
   - Merge Two Singly Linked Lists
 
-# Circular Linked Lists
+# Circular Linked List
 
+- **len**()
+- print_list()
 - append()
 - prepend()
-- print_list()
+- delete()
+- insert()
 
 # Doubly Linked Lists
 
+- print_list()
 - append()
 - prepend()
