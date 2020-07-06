@@ -57,6 +57,9 @@ class DLL:
         old_head.prev = new_node
         self.head = new_node
 
+    def delete(self, data):
+        pass
+
 
 dll = DLL()
 dll.append('A')
