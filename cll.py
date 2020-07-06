@@ -90,7 +90,30 @@ class CircularLinkedList:
             cur = None
 
     def insert(self, prev_data, data):
-        pass
+
+        new_node = Node(data)
+
+        if not self.head:
+            self.head = new_node
+            new_node.next = new_node
+            return
+
+        prev = None
+        cur = self.head
+
+        while cur:
+            prev = cur
+            cur = cur.next
+
+            if prev.data == prev_data:
+                break
+
+            if cur == self.head:
+                print('prev_data doesnt exist in the list')
+                return
+
+        prev.next = new_node
+        new_node.next = cur
 
 
 cll = CircularLinkedList()
@@ -104,3 +127,4 @@ cll.append('B')
 cll.append('C')
 cll.append('D')
 print(len(cll))
+# cll.print_list()
