@@ -40,8 +40,27 @@ class DLL:
             print(cur.data)
             cur = cur.next
 
-    def delete(self, data)
-    pass
+    def delete(self, data):
+        # None >< A >< B >< C >< D > None --> D
+        # None >< A >< B >< C > None
+
+        if not self.head:
+            print('List is empty.')
+            return
+
+        cur = self.head
+
+        while cur:
+            if cur.data == data:
+                if cur == self.head:
+                    self.head = self.head.next
+                else:
+                    cur.prev.next = cur.next
+
+                    if cur.next:
+                        cur.next.prev = cur.prev
+
+            cur = cur.next
 
 
 dll = DLL()
@@ -49,4 +68,5 @@ dll.append('A')
 dll.append('B')
 dll.append('C')
 dll.append('D')
+
 dll.print_list()
