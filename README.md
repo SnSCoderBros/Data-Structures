@@ -1,6 +1,6 @@
 # Data-Structures
 
-Learn data structures in python
+Code for the Data Structures playlist on SnSCoderBros Youtube Channel.
 
 # Stack
 
@@ -40,3 +40,4 @@ Learn data structures in python
 - print_list()
 - append()
 - prepend()
+- delete()

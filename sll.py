@@ -3,7 +3,7 @@ Nodes:
 data, next
 
 data -> 'A'
-next -> Node that holds the data element 'B'
+next -> Node that holds the data element 'B' (or any Node that comes after)
 
 A -> B -> C -> D -> None
 '''

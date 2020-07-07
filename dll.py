@@ -1,64 +1,72 @@
 """
 Doubly Linked Lists
 - uses Nodes
-None < A >< B >< C >< D > None 
+None < A >< B >< C >< D >< E > None 
+'E'
+
 """
+
+
 class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
         self.prev = None
-    
+
+
 class DLL:
     def __init__(self):
         self.head = None
-    
-    def print_list(self):
 
-        cur = self.head
-        while cur:
-            # if cur.prev:
-            #     print(cur.prev.data)
-
-            print(cur.data)
-
-            # if cur.next:
-            #     print(cur.next.data)
-
-            cur = cur.next
-            
     def append(self, data):
         new_node = Node(data)
 
         if not self.head:
             self.head = new_node
             return
-        
+
         cur = self.head
 
         while cur.next:
             cur = cur.next
-        
+
         cur.next = new_node
         new_node.prev = cur
-    
-    def prepend(self, data):
-        new_node = Node(data)
+
+    def print_list(self):
+        cur = self.head
+
+        while cur:
+            print(cur.data)
+            cur = cur.next
+
+    def delete(self, data):
+        # None >< A >< B >< C >< D > None --> D
+        # None >< A >< B >< C > None
 
         if not self.head:
-            self.head = new_node
+            print('List is empty.')
             return
-        
-        old_head = self.head
-        new_node.next = old_head
-        old_head.prev = new_node
-        self.head = new_node
 
-    
+        cur = self.head
+
+        while cur:
+            if cur.data == data:
+                if cur == self.head:
+                    self.head = self.head.next
+                else:
+                    cur.prev.next = cur.next
+
+                    if cur.next:
+                        cur.next.prev = cur.prev
+
+            cur = cur.next
+
 
 dll = DLL()
 dll.append('A')
 dll.append('B')
 dll.append('C')
 dll.append('D')
+
 dll.print_list()
