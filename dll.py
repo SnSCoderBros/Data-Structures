@@ -1,7 +1,9 @@
 """
 Doubly Linked Lists
 - uses Nodes
-None < A >< B >< C >< D > None 
+None < A >< B >< C >< D >< E > None 
+'E'
+
 """
 
 
@@ -15,20 +17,6 @@ class Node:
 class DLL:
     def __init__(self):
         self.head = None
-
-    def print_list(self):
-
-        cur = self.head
-        while cur:
-            # if cur.prev:
-            #     print(cur.prev.data)
-
-            print(cur.data)
-
-            # if cur.next:
-            #     print(cur.next.data)
-
-            cur = cur.next
 
     def append(self, data):
         new_node = Node(data)
@@ -45,20 +33,12 @@ class DLL:
         cur.next = new_node
         new_node.prev = cur
 
-    def prepend(self, data):
-        new_node = Node(data)
+    def print_list(self):
+        cur = self.head
 
-        if not self.head:
-            self.head = new_node
-            return
-
-        old_head = self.head
-        new_node.next = old_head
-        old_head.prev = new_node
-        self.head = new_node
-
-    def delete(self, data):
-        pass
+        while cur:
+            print(cur.data)
+            cur = cur.next
 
 
 dll = DLL()
