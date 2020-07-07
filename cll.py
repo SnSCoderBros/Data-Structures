@@ -90,8 +90,6 @@ class CircularLinkedList:
             cur = None
 
     def insert(self, prev_data, data):
-        # A > B > C > D > A > ... // prev = None, cur = A // prev = A, cur = B // prev = B, cur = C
-        # A > B > E > C > D > A > B > E > ...
         new_node = Node(data)
 
         if not self.head:

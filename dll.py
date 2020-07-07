@@ -40,6 +40,9 @@ class DLL:
             print(cur.data)
             cur = cur.next
 
+    def delete(self, data)
+    pass
+
 
 dll = DLL()
 dll.append('A')

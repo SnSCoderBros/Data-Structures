@@ -17,8 +17,6 @@ is_empty()
 __str__()
 get_stack()
 get_length()
-
-
 """
 
 

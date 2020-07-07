@@ -40,3 +40,4 @@ Learn data structures in python
 - print_list()
 - append()
 - prepend()
+- delete()
