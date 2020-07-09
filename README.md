@@ -41,3 +41,4 @@ Code for the Data Structures playlist on SnSCoderBros Youtube Channel.
 - append()
 - prepend()
 - delete()
+- reverse()
