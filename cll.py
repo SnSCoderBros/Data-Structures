@@ -1,6 +1,8 @@
 """
 Circular Linked Lists
 """
+import Node from sll.py
+import SinglyLinkedList from sll.py
 
 
 class Node:
@@ -113,12 +115,24 @@ class CircularLinkedList:
                 print("prev_data passed doesn't exist in the list")
                 return
 
+    def is_circular_linked_list(self, ll):
+        cur = ll.head
+
+        while cur:
+            cur = cur.next
+
+            if cur == ll.head:
+                return True
+
+        return False
+
 
 cll = CircularLinkedList()
-
 cll.append('A')
 cll.append('B')
 cll.append('C')
 cll.append('D')
-cll.insert('Z', 'E')
+# print(cll.is_circular_linked_list(cll))
 cll.print_list()
+
+sll =
