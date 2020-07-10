@@ -23,8 +23,8 @@ Code for the Data Structures playlist on SnSCoderBros Youtube Channel.
 - **len**()
 - delete()
 - Use Cases
-
   - Merge Two Singly Linked Lists
+  - Reverse Singly Linked List
 
 # Circular Linked List
 
@@ -34,6 +34,8 @@ Code for the Data Structures playlist on SnSCoderBros Youtube Channel.
 - prepend()
 - delete()
 - insert()
+- Use Cases
+  - Delete Every Kth Node
 
 # Doubly Linked Lists
 
@@ -42,3 +44,5 @@ Code for the Data Structures playlist on SnSCoderBros Youtube Channel.
 - prepend()
 - delete()
 - reverse()
+- Use Cases
+  - Is Palindrome

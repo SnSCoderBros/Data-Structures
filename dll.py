@@ -61,8 +61,6 @@ class DLL:
             cur = cur.next
 
     def reverse(self):
-        # None >< A >< B >< C >< D > None
-        # None >< D >< C >< B >< A > None
 
         prev = None
         cur = self.head
@@ -71,26 +69,41 @@ class DLL:
             nxt = cur.next
             cur.next = cur.prev
 
-            # cur.next = B
-            # cur.prev = None
-
             if cur.prev:
                 cur.prev = cur.next
 
             prev = cur
-            # cur = nxt
-            cur = cur.next
+            cur = nxt
 
         self.head = prev
+
+    def is_palindrome(self):
+        cur = self.head
+        last = self.head
+
+        while last.next:
+            last = last.next
+
+        while cur != last:
+            # print(cur.data, last.data)
+
+            if cur.data != last.data:
+                return False
+
+            cur = cur.next
+            if cur == last:
+                return True
+
+            last = last.prev
+
+        return True
 
 
 dll = DLL()
 dll.append('A')
 dll.append('B')
 dll.append('C')
-dll.append('D')
-dll.append('E')
-dll.append(1)
-dll.append(2)
-dll.reverse()
-dll.print_list()
+dll.append('C')
+dll.append('B')
+dll.append('A')
+print(dll.is_palindrome())
