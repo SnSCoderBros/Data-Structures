@@ -46,3 +46,5 @@ Code for the Data Structures playlist on SnSCoderBros Youtube Channel.
 - reverse()
 - Use Cases
   - Is Palindrome
+
+# Binary Trees
