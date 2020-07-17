@@ -21,7 +21,33 @@ class BinaryTree:
 
         return string
 
+    def preorder_traversal(self):
+        string = ''
+        return self.preorder_helper(string, self.root)
 
+    def preorder_helper(self, string, node):
+        if node:
+            string += str(node.data) + '-'
+            string = self.preorder_helper(string, node.left)
+            string = self.preorder_helper(string, node.right)
+
+        return string
+
+    def postorder_traversal(self):
+        string = ''
+        return self.postorder_helper(string, self.root)
+
+    def postorder_helper(self, string, node):
+        if node:
+            string = self.postorder_helper(string, node.left)
+            string = self.postorder_helper(string, node.right)
+            string += str(node.data) + '-'
+
+        return string
+
+
+# 1 - 2 - 4 - 5 - 3 - 6 - 7 -  -> Pre order
+# Post order -> 4 - 5 - 2 - 6 - 7 - 3 - 1
 """
             1
         2       3
@@ -36,4 +62,6 @@ bt.root.left.right = Node(5)
 bt.root.right.left = Node(6)
 bt.root.right.right = Node(7)
 
-print(bt.inorder_traversal())  # 4-2-5-1-6-3-7-
+# print(bt.inorder_traversal())
+# print(bt.preorder_traversal())
+print(bt.postorder_traversal())

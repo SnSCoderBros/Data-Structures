@@ -48,3 +48,7 @@ Code for the Data Structures playlist on SnSCoderBros Youtube Channel.
   - Is Palindrome
 
 # Binary Trees
+
+- inorder_traversal()
+- preorder_traversal()
+- postorder_traversal()
