@@ -98,12 +98,33 @@ class DLL:
 
         return True
 
+    def find_kth_node_from_end(self, k):
+        # A B C D E  - 2
+
+        last = self.head
+
+        while last.next:
+            last = last.next
+
+        count = 1
+
+        while count != k:
+            if not last.prev:
+                return None
+
+            last = last.prev
+            count += 1
+
+        return last.data
+
 
 dll = DLL()
 dll.append('A')
 dll.append('B')
 dll.append('C')
-dll.append('C')
-dll.append('B')
-dll.append('A')
-print(dll.is_palindrome())
+dll.append('D')
+dll.append('E')
+
+val = dll.find_kth_node_from_end(7)
+
+print(val)

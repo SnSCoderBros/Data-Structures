@@ -46,6 +46,7 @@ Code for the Data Structures playlist on SnSCoderBros Youtube Channel.
 - reverse()
 - Use Cases
   - Is Palindrome
+  - Find Kth Node From the End
 
 # Binary Trees
 
