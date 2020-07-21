@@ -1,8 +1,6 @@
 """
 Circular Linked Lists
 """
-import Node from sll.py
-import SinglyLinkedList from sll.py
 
 
 class Node:
@@ -82,6 +80,7 @@ class CircularLinkedList:
             last.next = cur.next
             self.head = last.next
             return
+
         prev = None
         cur = self.head
         while cur.next != self.head and cur.data != data:
@@ -115,24 +114,63 @@ class CircularLinkedList:
                 print("prev_data passed doesn't exist in the list")
                 return
 
-    def is_circular_linked_list(self, ll):
-        cur = ll.head
+    def remove_fibonacci_nums(self):  # 0 1 1 2 3 5 8 13 21 34 55 89
+        # find the largest number
+        cur = self.head
+        largest_num = cur.data
 
         while cur:
             cur = cur.next
+            if cur == self.head:
+                break
 
-            if cur == ll.head:
-                return True
+            if cur.data > largest_num:
+                largest_num = cur.data
 
-        return False
+        # create fib_array
+        fib_array = [0, 1]
+        num = None
+
+        while num < largest_num:
+            last = fib_array[-1]
+            second_to_last = fib_array[-2]
+
+            num = last + second_to_last
+            fib_array.append(num)
+
+        # print(fib_array)
+
+        # remove fib nodes
+
+        prev = None
+        cur2 = self.head
+        old_head = self.head
+
+        while cur2:
+            if cur2.data in fib_array:
+                if cur2 == self.head:
+                    self.head = self.head.next
+                    cur2 = self.head
+                else:
+                    nxt = cur2.next
+                    prev.next = nxt
+                    cur2 = nxt
+            else:
+                prev = cur2
+                cur2 = cur2.next
+
+            if cur2 == old_head:
+                prev.next = self.head
+                break
 
 
 cll = CircularLinkedList()
-cll.append('A')
-cll.append('B')
-cll.append('C')
-cll.append('D')
-# print(cll.is_circular_linked_list(cll))
+cll.append(2)
+cll.append(10)
+cll.append(6)
+cll.append(13)
+cll.append(8)
+cll.append(4)
+cll.append(55)
+cll.remove_fibonacci_nums()
 cll.print_list()
-
-sll =
