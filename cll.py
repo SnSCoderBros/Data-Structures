@@ -3,6 +3,38 @@ Circular Linked Lists
 """
 
 
+class SinglyLinkedList:
+    # based around the concept of Nodes
+    # creates a chain of Nodes by connecting them with one another
+
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+
+        # handle for if the list is empty
+        if not self.head:
+            self.head = new_node
+            return
+
+        # handle for if the list is not empty
+        cur_node = self.head
+
+        while cur_node.next:
+            cur_node = cur_node.next
+        cur_node.next = new_node
+
+    def print_list(self):
+        # A -> B -> C -> None
+        # self.head = "A" -> self.head -> "B" -> self.head -> "C"... -> self.head -> None
+
+        cur_node = self.head
+        while cur_node:
+            print(cur_node.data)
+            cur_node = cur_node.next
+
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -164,13 +196,30 @@ class CircularLinkedList:
                 break
 
 
+def is_circular_linked_list(ll):
+    cur = ll.head
+
+    while cur.next:
+        cur = cur.next
+        if cur == ll.head:
+            return True
+
+    return False
+
+
 cll = CircularLinkedList()
+cll.append(1)
 cll.append(2)
-cll.append(10)
-cll.append(6)
-cll.append(13)
-cll.append(8)
+cll.append(3)
 cll.append(4)
-cll.append(55)
-cll.remove_fibonacci_nums()
-cll.print_list()
+# cll.print_list()
+
+sll = SinglyLinkedList()
+sll.append(1)
+sll.append(2)
+sll.append(3)
+sll.append(4)
+# sll.print_list()
+
+print(is_circular_linked_list(cll))
+print(is_circular_linked_list(sll))
