@@ -35,7 +35,8 @@ Code for the Data Structures playlist on SnSCoderBros Youtube Channel.
 - delete()
 - insert()
 - Use Cases
-  - Delete Every Kth Node
+  - Remove Fibonacci Numbers
+  - Is Circular Linked List
 
 # Doubly Linked Lists
 
